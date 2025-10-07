@@ -26,7 +26,7 @@ namespace ITP_Assignment.Controllers
         //public IActionResult AddLecturer()
         //{
 
-        //}
+        ///}
 
     }
 }

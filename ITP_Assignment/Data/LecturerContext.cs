@@ -7,7 +7,7 @@ namespace ITP_Assignment.Data
     {
         public LecturerContext(DbContextOptions<LecturerContext> options): base(options) 
         {
-            
+            //
         }
 
         public DbSet<Lecturer>Lecturers { get; set; }
