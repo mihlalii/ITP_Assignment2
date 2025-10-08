@@ -19,7 +19,7 @@ namespace ITP_Assignment.Controllers
         public IActionResult GetAllLecturers()
         {
             var allLecturers=dbContext.Lecturers.ToList();
-            return Ok(allLecturers);
+            return Ok(allLecturers);///
         }
         //[HttpPost]
 
