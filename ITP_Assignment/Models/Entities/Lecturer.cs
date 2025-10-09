@@ -1,10 +1,15 @@
-﻿namespace ITP_Assignment.Models.Entities
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ITP_Assignment.Models.Entities
 {
     public class Lecturer
     {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string PhoneNumber { get; set; }//
+        [Key]
+        public int LecturerId { get; set; }
+
+        // Navigation
+        [NotMapped]
+        public ICollection<Course>? Courses { get; set; }
     }
 }

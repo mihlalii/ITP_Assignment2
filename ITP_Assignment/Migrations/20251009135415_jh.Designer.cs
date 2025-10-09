@@ -4,6 +4,7 @@ using ITP_Assignment.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ITP_Assignment.Migrations
 {
     [DbContext(typeof(LecturerContext))]
-    partial class LecturerContextModelSnapshot : ModelSnapshot
+    [Migration("20251009135415_jh")]
+    partial class jh
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -176,11 +179,11 @@ namespace ITP_Assignment.Migrations
 
             modelBuilder.Entity("ITP_Assignment.Models.Entities.User", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("UerId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UerId"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -221,7 +224,7 @@ namespace ITP_Assignment.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("UserId");
+                    b.HasKey("UerId");
 
                     b.HasIndex("RoleID");
 
