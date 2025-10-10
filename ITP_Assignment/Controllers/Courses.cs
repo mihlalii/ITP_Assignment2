@@ -17,7 +17,7 @@ namespace ITP_Assignment.Controllers
             this.dbContext = dbContext;
         }
 
-        // ✅ GET all courses (with lecturer and modules)
+        
         [HttpGet]
         public IActionResult GetAllCourses()
         {
@@ -32,7 +32,7 @@ namespace ITP_Assignment.Controllers
             return Ok(courses);
         }
 
-        // ✅ GET course by ID
+        
         [HttpGet("{id}")]
         public IActionResult GetCourseById(int id)
         {
@@ -47,7 +47,7 @@ namespace ITP_Assignment.Controllers
             return Ok(course);
         }
 
-        // ✅ POST add a new course
+        
         [HttpPost]
         public IActionResult CreateCourse([FromBody] CreateCourseDto dto)
         {
@@ -76,7 +76,7 @@ namespace ITP_Assignment.Controllers
             });
         }
 
-        // ✅ PUT update existing course
+        
         [HttpPut("{id}")]
         public IActionResult UpdateCourse(int id, [FromBody] CreateCourseDto dto)
         {
@@ -105,7 +105,7 @@ namespace ITP_Assignment.Controllers
             });
         }
 
-        // ✅ DELETE a course
+        
         [HttpDelete("{id}")]
         public IActionResult DeleteCourse(int id)
         {

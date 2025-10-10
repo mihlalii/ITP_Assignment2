@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ITP_Assignment.Migrations
 {
     [DbContext(typeof(LecturerContext))]
-    [Migration("20251010101523_dd")]
-    partial class dd
+    [Migration("20251010111129_mm")]
+    partial class mm
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
