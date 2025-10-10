@@ -6,14 +6,16 @@ namespace ITP_Assignment.Models.Entities
 {
     public class TaskItem
     {
-        public Guid Id { get; set; }
+        [Key]
         public int TaskItemId { get; set; }
 
         [Required]
         public string TaskName { get; set; } = string.Empty;
 
         [Required]
+        [DataType(DataType.Date)]
         public DateTime DueDate { get; set; }
+
 
         [ForeignKey("Module")]
         public int ModuleId { get; set; }

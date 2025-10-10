@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ITP_Assignment.Migrations
 {
     [DbContext(typeof(LecturerContext))]
-    [Migration("20251009140039_jhd")]
-    partial class jhd
+    [Migration("20251010101523_dd")]
+    partial class dd
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -150,9 +150,11 @@ namespace ITP_Assignment.Migrations
 
             modelBuilder.Entity("ITP_Assignment.Models.Entities.TaskItem", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("TaskItemId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TaskItemId"));
 
                     b.Property<DateTime>("DueDate")
                         .HasColumnType("datetime2");
@@ -163,14 +165,11 @@ namespace ITP_Assignment.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
-                    b.Property<int>("TaskItemId")
-                        .HasColumnType("int");
-
                     b.Property<string>("TaskName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("TaskItemId");
 
                     b.HasIndex("ModuleId");
 

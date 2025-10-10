@@ -65,9 +65,9 @@ namespace ITP_Assignment.Controllers
 
 
         [HttpPost("{lecturerId}/CreateTask")]
-        public IActionResult CreateTask(int lecturerId, [FromBody] TaskItem task)
+        public IActionResult CreateTask(int lecturerId, [FromBody] CreateTaskDto dto)
         {
-            if (task == null)
+            if (dto == null)
                 return BadRequest("Task data is missing.");
 
             var lecturer = dbContext.Lecturers
@@ -80,7 +80,7 @@ namespace ITP_Assignment.Controllers
 
             var module = dbContext.Modules
                 .Include(m => m.Course)
-                .FirstOrDefault(m => m.ModuleId == task.ModuleId);
+                .FirstOrDefault(m => m.ModuleId == dto.ModuleId);
 
             if (module == null)
                 return BadRequest("Invalid module ID.");
@@ -90,9 +90,9 @@ namespace ITP_Assignment.Controllers
 
             var newTask = new TaskItem
             {
-                TaskName = task.TaskName,
-                DueDate = task.DueDate,
-                ModuleId = task.ModuleId,
+                TaskName = dto.TaskName,
+                DueDate = dto.DueDate,
+                ModuleId = dto.ModuleId,
                 Status = 0
             };
 
@@ -106,8 +106,8 @@ namespace ITP_Assignment.Controllers
                 newTask.TaskName,
                 newTask.DueDate
             });
-
         }
+
     }
 }
 

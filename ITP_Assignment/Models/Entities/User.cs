@@ -16,7 +16,7 @@ namespace ITP_Assignment.Models.Entities
 
         [Required]
         public string Gender { get; set; } = string.Empty;
-
+        [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; }
 
         public string Address { get; set; } = string.Empty;
