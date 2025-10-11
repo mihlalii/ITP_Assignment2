@@ -16,7 +16,7 @@ namespace ITP_Assignment.Controllers
             this.dbContext = dbContext;
         }
 
-        // ✅ GET all modules
+       
         [HttpGet]
         public IActionResult GetAllModules()
         {
@@ -31,7 +31,7 @@ namespace ITP_Assignment.Controllers
             return Ok(modules);
         }
 
-        // ✅ GET module by ID
+        
         [HttpGet("{id}")]
         public IActionResult GetModuleById(int id)
         {
@@ -46,14 +46,14 @@ namespace ITP_Assignment.Controllers
             return Ok(module);
         }
 
-        // ✅ POST add new module
+        
         [HttpPost]
         public IActionResult CreateModule([FromBody] CreateModuleDto dto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            // Ensure Course exists
+            
             var course = dbContext.Courses.FirstOrDefault(c => c.CourseId == dto.CourseId);
             if (course == null)
                 return BadRequest($"Course with ID {dto.CourseId} does not exist.");
@@ -76,7 +76,7 @@ namespace ITP_Assignment.Controllers
             });
         }
 
-        // ✅ PUT update module
+        
         [HttpPut("{id}")]
         public IActionResult UpdateModule(int id, [FromBody] CreateModuleDto dto)
         {
@@ -99,7 +99,7 @@ namespace ITP_Assignment.Controllers
             return Ok(new { message = "Module updated successfully.", module });
         }
 
-        // ✅ DELETE module
+        
         [HttpDelete("{id}")]
         public IActionResult DeleteModule(int id)
         {

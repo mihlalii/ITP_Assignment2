@@ -1,0 +1,9 @@
+﻿namespace ITP_Assignment.Models.Entities
+{
+    public class LecturerCreateDto
+    {
+        public required string Name { get; set; }
+
+        public required string Email { get; set; }
+    }
+}

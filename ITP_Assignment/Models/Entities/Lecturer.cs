@@ -7,8 +7,10 @@ namespace ITP_Assignment.Models.Entities
     {
         [Key]
         public int LecturerId { get; set; }
-
-        // Navigation
+        [Required]
+        public required string Name { get; set; }
+        
+        public required string Email { get; set; }
         [NotMapped]
         public ICollection<Course>? Courses { get; set; }
     }

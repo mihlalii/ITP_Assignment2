@@ -71,6 +71,7 @@ namespace ITP_Assignment.Controllers
             {
                 message = "Course created successfully.",
                 newCourse.CourseId,
+                newCourse.CourseName,
                 newCourse.CourseTitle,
                 newCourse.LecturerId
             });
@@ -100,6 +101,7 @@ namespace ITP_Assignment.Controllers
             {
                 message = "Course updated successfully.",
                 course.CourseId,
+                course.CourseName,
                 course.CourseTitle,
                 course.LecturerId
             });

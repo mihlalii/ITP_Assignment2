@@ -10,6 +10,10 @@ namespace ITP_Assignment.Models.Entities
 
         [Required]
         [StringLength(100)]
+        public string CourseName { get; set; } = string.Empty;
+
+        [Required]
+        [StringLength(100)]
         public string CourseTitle { get; set; } = string.Empty;
 
         [ForeignKey("Lecturer")]

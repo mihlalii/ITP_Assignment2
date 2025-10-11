@@ -9,6 +9,10 @@ namespace ITP_Assignment.Models.Entities
         public string CourseName { get; set; } = string.Empty;
 
         [Required]
+        [StringLength(100)]
+        public string CourseTitle { get; set; } = string.Empty;
+
+        [Required]
         public int LecturerId { get; set; }
     }
 }
