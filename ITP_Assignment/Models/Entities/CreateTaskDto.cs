@@ -11,5 +11,7 @@ namespace ITP_Assignment.Models.Entities
 
         public DateTime DueDate { get; set; }
         public int ModuleId { get; set; }
+
+        public required string Status { get; set; }
     }
 }

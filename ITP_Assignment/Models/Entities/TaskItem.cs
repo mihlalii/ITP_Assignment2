@@ -20,10 +20,13 @@ namespace ITP_Assignment.Models.Entities
         [ForeignKey("Module")]
         public int ModuleId { get; set; }
 
-        
-        public int Status { get; set; }
 
-      
+        public required string Status { get; set; }
+
+
         public Module? Module { get; set; }
+
+        [Required]
+        public int LecturerId { get; set; }
     }
 }

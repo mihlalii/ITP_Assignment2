@@ -93,7 +93,7 @@ namespace ITP_Assignment.Controllers
                 TaskName = dto.TaskName,
                 DueDate = dto.DueDate,
                 ModuleId = dto.ModuleId,
-                Status = 0
+                Status ="Not Started"
             };
 
             dbContext.Tasks.Add(newTask);
