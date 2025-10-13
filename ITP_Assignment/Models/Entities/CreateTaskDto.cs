@@ -13,5 +13,8 @@ namespace ITP_Assignment.Models.Entities
         public int ModuleId { get; set; }
 
         public required string Status { get; set; }
+
+        [Required]
+        public int LecturerId { get; set; }
     }
 }

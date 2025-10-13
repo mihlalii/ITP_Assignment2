@@ -60,7 +60,8 @@ namespace ITP_Assignment.Controllers
 
             var newCourse = new Course
             {
-                CourseTitle = dto.CourseName,
+                CourseName = dto.CourseName,
+                CourseTitle = dto.CourseTitle,
                 LecturerId = dto.LecturerId
             };
 
